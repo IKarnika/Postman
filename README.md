@@ -24,6 +24,7 @@ age: 23
 
 response:  
 
+---
 <a name="EP_2">EP_2</a>  
 Method: POST  
 EndPoint: /user_info_3  
@@ -34,6 +35,7 @@ salary:2000
 
 response:  
 
+---
 <a name="EP_3">EP_3</a>  
 Method: GET  
 EndPoint: /object_info_1  

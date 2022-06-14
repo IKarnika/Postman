@@ -26,8 +26,8 @@ response:
 Method: POST  
 EndPoint: /user_info_3  
 Request form data:  
-name: Helen  
-age: 23   
+name: Nata  
+age: 18   
 salary:2000  
 
 response:  

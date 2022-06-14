@@ -12,7 +12,7 @@
 Protocol: http  
 IP: 162.55.220.72  
 Port: 5005
-
+---
 <a name="EP_1">EP_1</a>  
 Method: GET  
 EndPoint: /get_method  

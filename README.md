@@ -1,7 +1,7 @@
 # HW_1 Postman
 ## [EP_1](#EP_1)
 ## [EP_2](#EP_2)
-## EP_3
+## [EP_3](#EP_3)
 ## EP_4
 ## EP_5
 ## EP_6
@@ -29,5 +29,15 @@ Request form data:
 name: Helen  
 age: 23 
 salary:2000  
+
+response:  
+
+<a name="EP_3">EP_3</a>  
+Method: GET  
+EndPoint: /object_info_1  
+Request url params:  
+name: Alex  
+age: 28 
+weight:67  
 
 response:  

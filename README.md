@@ -31,7 +31,7 @@ EndPoint: /user_info_3
 Request form data:  
 name: Nata  
 age: 18   
-salary:2000  
+salary: 2000  
 
 response:  
 
@@ -54,5 +54,38 @@ Request url params:
 name: Chuk  
 age: 67   
 salary:3200  
+
+response: 
+
+---
+<a name="EP_5">EP_5</a>  
+Method: GET  
+EndPoint: /object_info_3  
+Request url params:  
+name: Liza  
+age: 27   
+salary: 1800  
+
+response: 
+
+---
+<a name="EP_6">EP_6</a>  
+Method: GET  
+EndPoint: /object_info_4  
+Request url params:  
+name: Kate  
+age: 44   
+salary: 3400  
+
+response: 
+
+---
+<a name="EP_7">EP_7</a>  
+Method: POST  
+EndPoint: /user_info_2  
+Request form data:  
+name: Goose  
+age: 2   
+salary: 100  
 
 response: 

@@ -21,3 +21,13 @@ name: Helen
 age: 23  
 
 response:  
+
+##### EP_2
+Method: POST  
+EndPoint: /user_info_3  
+Request form data:  
+name: Helen  
+age: 23 
+salary:2000  
+
+response:  

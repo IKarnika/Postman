@@ -36,7 +36,7 @@ salary: 2000
 response:  
 
 ---
-<a name="EP_3">EP_3</a>  
+<a name="#EP_3">EP_3</a>  
 Method: GET  
 EndPoint: /object_info_1  
 Request url params:  
@@ -53,7 +53,7 @@ EndPoint: /object_info_2
 Request url params:  
 name: Chuk  
 age: 67   
-salary:3200  
+salary: 3200  
 
 response: 
 

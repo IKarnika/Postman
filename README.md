@@ -27,7 +27,7 @@ Method: POST
 EndPoint: /user_info_3  
 Request form data:  
 name: Helen  
-age: 23 
+age: 23   
 salary:2000  
 
 response:  
@@ -37,7 +37,7 @@ Method: GET
 EndPoint: /object_info_1  
 Request url params:  
 name: Alex  
-age: 28 
+age: 28   
 weight:67  
 
 response:  

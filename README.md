@@ -13,7 +13,7 @@ Protocol: http
 IP: 162.55.220.72  
 Port: 5005
 
-<a name="EP_1">EP_1</a>
+<a name="EP_1">EP_1</a>  
 Method: GET  
 EndPoint: /get_method  
 Request url params:  
@@ -22,7 +22,7 @@ age: 23
 
 response:  
 
-<a name="EP_2">EP_2</a>
+<a name="EP_2">EP_2</a>  
 Method: POST  
 EndPoint: /user_info_3  
 Request form data:  

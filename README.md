@@ -2,7 +2,7 @@
 ## [EP_1](#EP_1)
 ## [EP_2](#EP_2)
 ## [EP_3](#EP_3)
-## EP_4
+## [EP_4](#EP_4)
 ## EP_5
 ## EP_6
 ## EP_7
@@ -45,3 +45,14 @@ age: 28
 weight:67  
 
 response:  
+
+---
+<a name="EP_4">EP_4</a>  
+Method: GET  
+EndPoint: /object_info_2  
+Request url params:  
+name: Chuk  
+age: 67   
+salary:3200  
+
+response: 

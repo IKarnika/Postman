@@ -11,7 +11,9 @@
 #### [EP_7](#7)
 
 ### [HW_2](#HW2)  
-#### [EP http://162.55.220.72:5005/first  ](#first)
+#### [EP http://162.55.220.72:5005/first  ](#first)  
+#### [EP http://162.55.220.72:5005/user_info_3](#user_info_3)  
+
 <a name="HW"></a>
 #### HW_1 Создать запросы в Postman
 
@@ -301,5 +303,12 @@ response:
 
 ![](https://user-images.githubusercontent.com/103427482/173826225-8c0e00f1-c1b3-4508-a767-7110655df5a3.png)  
 
+<a name="useer_info_3"></a>
+##### EP http://162.55.220.72:5005/user_info_3  
+Отправить запрос  
+*Дублировать предыдущий запрос, переименовать в Req_2  
+Ввести url http://162.55.220.72:5005/user_info_3  
+Сохранить (Save) и отправить (Send)*  
 
+Статус код 200
 

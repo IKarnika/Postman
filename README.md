@@ -1,4 +1,7 @@
-### HW_1 Postman
+## HW Postman
+
+### [HW_1](#HW)
+
 #### [EP_1](#1)
 #### [EP_2](#2)
 #### [EP_3](#3)
@@ -7,7 +10,9 @@
 #### [EP_6](#6)
 #### [EP_7](#7)
 
+### [HW_2](#HW2)
 
+<a name="HW"></a>
 #### Создать запросы в Postman
 
 Protocol: http  
@@ -275,3 +280,7 @@ response:
     "start_qa_salary": 100
 }
 ```
+
+
+<a name="HW2"></a>
+

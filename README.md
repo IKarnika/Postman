@@ -303,7 +303,7 @@ response:
 
 ![](https://user-images.githubusercontent.com/103427482/173826225-8c0e00f1-c1b3-4508-a767-7110655df5a3.png)  
 
-<a name="useer_info_3"></a>
+<a name="user_info_3"></a>
 ##### EP http://162.55.220.72:5005/user_info_3  
 Отправить запрос  
 *Дублировать предыдущий запрос, переименовать в Req_2  

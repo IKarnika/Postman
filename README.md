@@ -14,13 +14,22 @@ Protocol: http
 IP: 162.55.220.72  
 Port: 5005
 
+*В Postman создать новую коллекцию HW_1_Postman. В коллекции добавить запрос(Add request)*
+
 ---
 <a name="EP_1">EP_1</a>   
 Method: GET  
 EndPoint: /get_method  
 Request url params:  
-name: Helen  
-age: 23  
+name: str Helen  
+age: int 23  
+
+*В url прописать http://162.55.220.72:5005/get_method
+В Params добавить ключи и значения:*
+Key| Value  
+:-- | --:  
+name | Helen  
+age | 23  
 
 response:  
 

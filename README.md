@@ -21,28 +21,61 @@ Port: 5005
 Method: GET  
 EndPoint: /get_method  
 Request url params:  
-name: str Helen  
-age: int 23  
+name: str   
+age: int   
 
 *В url прописать http://162.55.220.72:5005/get_method
 В Params добавить ключи и значения:*
 Key| Value  
-:-- | --:  
+:--:|:--:  
 name | Helen  
 age | 23  
 
+*Сохранить(Save) и отправить(Send)*
+
 response:  
+
+`[ 
+  "Helen",  
+  "23"  
+]`
 
 ---
 <a name="EP_2">EP_2</a>  
 Method: POST  
 EndPoint: /user_info_3  
 Request form data:  
-name: Nata  
-age: 18   
-salary: 2000  
+name: str  
+age: int 
+salary: int
+
+*В url прописать http://162.55.220.72:5005/user_info_3 Выбрать тип запроса POST, на вкладке Body выбрать Form-data, добавить ключи и зачения:*
+Key| Value  
+:--: | :--:  
+name | Nata  
+age | 18  
+salary | 2000
+
 
 response:  
+`{  
+  "age": "18",  
+    "family": {  
+      "children":   [  
+            [  
+              "Alex",  
+                24  
+                  ],  
+            [  
+               "Kate",  
+                12  
+                  ]  
+                    ],  
+                    "u_salary_1_5_year": 8000  
+                },  
+    "name": "Nata",  
+    "salary": 2000
+}`
 
 ---
 <a name="#EP_3">EP_3</a>  

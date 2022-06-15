@@ -10,10 +10,10 @@
 #### [EP_6](#6)
 #### [EP_7](#7)
 
-### [HW_2](#HW2)
-
+### [HW_2](#HW2)  
+#### [EP http://162.55.220.72:5005/first  ](#first)
 <a name="HW"></a>
-#### Создать запросы в Postman
+#### HW_1 Создать запросы в Postman
 
 Protocol: http  
 IP: 162.55.220.72  
@@ -283,4 +283,17 @@ response:
 
 
 <a name="HW2"></a>
+#### HW_2  
+
+<a name="first"></a>
+##### EP http://162.55.220.72:5005/first  
+Отправить запрос  
+*Создать новую колеекцию HW_2.  
+Добавить запрос(add request) Req_1  
+Соханить (Save) и отправить (Send)* 
+
+Статус код 200  
+
+![](https://user-images.githubusercontent.com/103427482/173824538-ba512760-dc72-4a83-add3-441943a130a0.png)  
+
 

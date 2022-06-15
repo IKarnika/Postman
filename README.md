@@ -1,14 +1,14 @@
 ### HW_1 Postman
-#### [EP_1](#EP_1)
-#### [EP_2](#EP_2)
-#### [EP_3](#EP_3)
-#### [EP_4](#EP_4)
-#### [EP_5](#EP_5)
-#### [EP_6](#EP_6)
-#### [EP_7](#EP_7)
+#### [EP_1](#1)
+#### [EP_2](#2)
+#### [EP_3](#3)
+#### [EP_4](#4)
+#### [EP_5](#5)
+#### [EP_6](#6)
+#### [EP_7](#7)
 
 
-##### Создать запросы в Postman
+#### Создать запросы в Postman
 
 Protocol: http  
 IP: 162.55.220.72  
@@ -17,7 +17,8 @@ Port: 5005
 *В Postman создать новую коллекцию HW_1_Postman. В коллекции добавить запрос(Add request)*
 
 ---
-<a name="EP_1">EP_1</a>   
+<a name="1"></a>   
+##### EP_1  
 Method: GET  
 EndPoint: /get_method  
 Request url params:  
@@ -43,7 +44,8 @@ response:
 ```
 
 ---
-<a name="EP_2">EP_2</a>  
+<a name="2"></a>  
+##### EP_2  
 Method: POST  
 EndPoint: /user_info_3  
 Request form data:  
@@ -84,7 +86,8 @@ response:
 ```
 
 ---
-<a name="#EP_3">EP_3</a>  
+<a name="3"></a>  
+##### EP_3  
 Method: GET  
 EndPoint: /object_info_1  
 Request url params:  
@@ -112,7 +115,8 @@ response:
 }
 ```
 ---
-<a name="EP_4">EP_4</a>  
+<a name="4"></a>  
+##### EP_4  
 Method: GET  
 EndPoint: /object_info_2  
 Request url params:  
@@ -150,7 +154,8 @@ response:
 }
 ```
 ---
-<a name="EP_5">EP_5</a>  
+<a name="5"></a>  
+##### EP_5  
 Method: GET  
 EndPoint: /object_info_3  
 Request url params:  
@@ -200,7 +205,8 @@ response:
 }
 ```
 ---
-<a name="EP_6">EP_6</a>  
+<a name="6"></a>  
+##### EP_6  
 Method: GET  
 EndPoint: /object_info_4  
 Request url params:  
@@ -231,7 +237,8 @@ response:
 }
 ```
 ---
-<a name="EP_7>EP_7</a>"  
+<a name="7"></a>  
+##### EP_7  
 Method: POST  
 EndPoint: /user_info_2  
 Request form data:  

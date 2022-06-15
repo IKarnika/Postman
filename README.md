@@ -231,7 +231,7 @@ response:
 }
 ```
 ---
-<a name="EP_7">EP_7</a>  
+<a name="EP_7>EP_7</a>"  
 Method: POST  
 EndPoint: /user_info_2  
 Request form data:  

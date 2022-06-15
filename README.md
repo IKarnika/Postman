@@ -297,4 +297,9 @@ response:
 
 ![](https://user-images.githubusercontent.com/103427482/173824538-ba512760-dc72-4a83-add3-441943a130a0.png)  
 
+Проверить, что в body приходит правильный string  
+
+![](https://user-images.githubusercontent.com/103427482/173826225-8c0e00f1-c1b3-4508-a767-7110655df5a3.png)  
+
+
 

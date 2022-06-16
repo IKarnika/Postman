@@ -13,7 +13,8 @@
 ### [HW_2](#HW2)  
 #### [EP http://162.55.220.72:5005/first  ](#first)  
 #### [EP http://162.55.220.72:5005/user_info_3](#user_info_3)  
-#### [EP http://162.55.220.72:5005/object_info_3](#object_info_3)
+#### [EP http://162.55.220.72:5005/object_info_3](#object_info_3)  
+#### [EP http://162.55.220.72:5005/object_info_4](#onject_info_4)
 
 <a name="HW"></a>
 #### HW_1 Создать запросы в Postman
@@ -527,4 +528,53 @@ pm.test("salary is correct", function () {
 *Сохранить (Save) и отправить (Send)  
 На вкладке Test Results посмотреть результат*  
 ![](https://user-images.githubusercontent.com/103427482/174053888-240d4dcf-4bae-4024-b9fa-898b318d36f7.png)  
+
+8. Вывести в консоль параметр family из response  
+```  
+console.log('Family', responseData.family)  
+```  
+![](https://user-images.githubusercontent.com/103427482/174054648-d95756b8-887c-46c7-a129-61732ced7208.png)  
+
+9. Проверить, что у параметра dog есть параметры name  
+```  
+pm.test("Dog has name", function () {
+    pm.expect(responseData.family.pets.dog).to.haveOwnProperty('name');
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174055962-415857a8-e984-4802-87a4-8f1266ed1489.png)  
+
+10. Проверить, что у параметра dog есть параметры age  
+```  
+pm.test("Dog has age", function () {
+    pm.expect(responseData.family.pets.dog).to.haveOwnProperty('age');
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174056345-3ed9073e-d35c-4702-8329-9e6ba4bd55e2.png)  
+
+11. Проверить, что параметр name имеет значение Luky  
+```  
+pm.test("Name is luky", function () {
+    pm.expect(responseData.family.pets.dog.name).to.eql('Luky');
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174056882-13fe37c8-e210-4578-aec0-6b56a0c04c53.png)  
+
+12. Проверить, что параметр age имеет значение 4  
+```  
+pm.test("Age is 4", function () {
+    pm.expect(responseData.family.pets.dog.age).to.eql(4);
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174057297-5f441e0d-6725-4870-9cb9-11459eb1f329.png)  
+
+<a name="object_info_4"></a>
+##### EP http://162.55.220.72:5005/object_info_4  
 

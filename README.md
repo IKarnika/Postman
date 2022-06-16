@@ -409,7 +409,7 @@ console.log(requestData);
 Внести необходимые изменения*  
 ```  
 pm.test("name request", function () {
-    pm.expect(responseData.name).to.eql("Vishenka");
+    pm.expect(responseData.name).to.eql(requestData.name);
 });  
 ```  
 *Сохранить (Save) и отправить (Send)  
@@ -421,7 +421,7 @@ pm.test("name request", function () {
 Внести необходимые изменения*  
 ```  
 pm.test("age request", function () {
-    pm.expect(responseData.age).to.eql("18");
+    pm.expect(responseData.age).to.eql(requestData.age);
 });  
 ```  
 *Сохранить (Save) и отправить (Send)  
@@ -502,8 +502,8 @@ console.log('Request Data:', requestData);
 5. Проверить, что name в ответе равно name s request (name забрать из request)  
 ```  
 pm.test("name is correct", function () {
-    pm.expect(responseData.name).to.eql("Yabloko");
-});  
+    pm.expect(responseData.name).to.eql(requestData.name);  
+ });
 ```  
 *Сохранить (Save) и отправить (Send)  
 На вкладке Test Results посмотреть результат*  
@@ -512,8 +512,8 @@ pm.test("name is correct", function () {
 6. Проверить, что age в ответе равно age s request (age забрать из request)  
 ```  
 pm.test("age is correct", function () {
-    pm.expect(responseData.age).to.eql("24");  
-});  
+    pm.expect(responseData.age).to.eql(requestData.age);
+}); 
 ```  
 *Сохранить (Save) и отправить (Send)  
 На вкладке Test Results посмотреть результат*  
@@ -522,8 +522,8 @@ pm.test("age is correct", function () {
 7. Проверить, что salary в ответе равно salary s request (salary забрать из request)  
 ```  
 pm.test("salary is correct", function () {
-    pm.expect(responseData.salary).to.eql(3000);
-});  
+    pm.expect(responseData.salary).to.eql(Number(requestData.salary));
+}); 
 ```  
 *Сохранить (Save) и отправить (Send)  
 На вкладке Test Results посмотреть результат*  
@@ -608,7 +608,7 @@ pm.test("Status code is 200", function () {
 let responseData = pm.response.json();
 console.log(responseData);  
 ```  
-![](https://user-images.githubusercontent.com/103427482/174059040-6f32d6ec-cdd4-4337-b72a-8eba88fa6cbb.png)  
+![](https://user-images.githubusercontent.com/103427482/174116411-2bb8776f-0f07-4377-a16b-3ee79913ba4a.png)  
 
 4. Спарсить request  
 *На вкладке Tests прописать*  
@@ -621,7 +621,7 @@ console.log('Request Data:', requestData);
 5. Проверить, что name в ответе равно name s request (name забрать из request)  
 ```  
 pm.test("name is correct", function () {
-    pm.expect(responseData.name).to.eql("Tomat");
+    pm.expect(requestData.name).to.eql(requestData.name);
 });  
 ```  
 *Сохранить (Save) и отправить (Send)  
@@ -631,7 +631,7 @@ pm.test("name is correct", function () {
 6. Проверить, что age в ответе равно age s request (age забрать из request)  
 ```  
 pm.test("age is correct", function () {
-    pm.expect(responseData.age).to.eql("33");  
+    pm.expect(requestData.age).to.eql(requestData.age);
 });  
 ```  
 *Сохранить (Save) и отправить (Send)  
@@ -644,10 +644,55 @@ console.log('Request salary', requestData.salary);
 ```  
 ![](https://user-images.githubusercontent.com/103427482/174060138-f641fe0c-d723-4a90-ac93-cb74919481aa.png)  
 
-8. Вывести в консоль параметр salary из reaponse  
+8. Вывести в консоль параметр salary из response  
 ```  
 console.log('Response salary', responseData.salary);  
 ```  
-![](https://user-images.githubusercontent.com/103427482/174060148-1f8aa691-af38-4ade-8436-ef8cb0712f30.png)  
+![](https://user-images.githubusercontent.com/103427482/174115588-7f757eb8-65f5-49a1-968b-d1c0cdc3e165.png)  
 
 9. Вывести в консоль 0-й элемент параметра salary из response
+```  
+console.log(responseData.salary[0]);  
+```  
+![](https://user-images.githubusercontent.com/103427482/174123182-b9d80035-9c80-4015-acec-f2a8d0a3c8d2.png)  
+
+10. Вывести в консоль 1-й элемент параметра salary параметр salary из response  
+```  
+console.log(responseData.salary[1]);  
+```  
+![](https://user-images.githubusercontent.com/103427482/174123256-ae7e9cf4-a657-4cbf-9350-eb5bb88657d7.png)  
+
+11. Вывести в консоль 2-й элемент параметра salary параметр salary из response  
+```  
+console.log(responseData.salary[1]);  
+```  
+![](https://user-images.githubusercontent.com/103427482/174123316-73302054-3622-4544-af86-a017e0ec0896.png)  
+
+12. Проверить, что 0-й элемент параметра salary равен salary из request (salary забрать из request)  
+```  
+pm.test("salary is correct", function () {
+    pm.expect(responseData.salary[0]).to.eql(Number(requestData.salary));
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174123474-f7c3ab10-38d5-4411-b35c-356656d352b1.png)  
+
+13. Проверить, что 1-й элемент параметра salary равен salary*2 из request (salary забрать из request)  
+```  
+pm.test("salary*2 is correct", function () {
+    pm.expect(+responseData.salary[1]).to.eql(requestData.salary*2);
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174124304-dce23dc8-dfbb-423b-80fb-cc27fb4fb3e6.png)  
+
+14. Проверить, что 2-й элемент параметра salary равен salary*3 из request (salary забрать из request)  
+```  
+pm.test("salary*3 is correct", function () {
+    pm.expect(+responseData.salary[2]).to.eql(requestData.salary*3);
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174124599-e0add45a-bb76-43a4-8903-94c784f1503b.png)  
+
+15.Создать в окружении переменную name  
+*На панели нажать Environment, Create new environment, присвоить окружению имя(New for HW_2)  
+В атрибут Variable внести строку name, присвоив значение(Current value) "Chipy"*  
+

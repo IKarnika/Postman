@@ -443,3 +443,14 @@ pm.test("salary request", function () {
 console.log(responseData.family);  
 ```  
 12. Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)  
+```  
+let salary_check = responseData.salary * 4;
+let salary1_5 = responseData.family.u_salary_1_5_year;
+
+pm.test("salary*4 check", function () {
+    pm.expect(salary_check).to.eql(salary1_5);
+});  
+```   
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174026929-5b9ee0e6-d9ba-4bf0-8a3b-f017675b66f5.png)  

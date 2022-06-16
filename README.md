@@ -15,7 +15,7 @@
 #### [EP http://162.55.220.72:5005/user_info_3](#user_info_3)  
 #### [EP http://162.55.220.72:5005/object_info_3](#object_info_3)  
 #### [EP http://162.55.220.72:5005/object_info_4](#object_info_4)
-
+#### [EP http://162.55.220.72:5005/user_info_2](#user_info_2)
 <a name="HW"></a>
 #### HW_1 Создать запросы в Postman
 
@@ -721,3 +721,111 @@ console.log('salary elements',i);
 	}  
  ```  
 ![](https://user-images.githubusercontent.com/103427482/174132442-9a0d913e-a947-412d-9b93-0c4928896b8f.png)  
+
+<a name="user_info_2"></a>  
+##### EP http://162.55.220.72:5005/user_info_2  
+
+*Добавить новый запрос(Add request) Req_5  
+Выбрать метод Post, открыть вкладку Body, form-data*  
+
+1. Вставить параметр salary из окружения в request  
+2. Вставить параметр age из окружения в age  
+3. Вставить параметр name из окружения в name  
+
+![](https://user-images.githubusercontent.com/103427482/174135079-9bd6a28b-b7ab-4fea-9640-ffede734befb.png)  
+
+4. Отправить запрос  
+*Сохранить(Save) и отправить(Send)*  
+
+5. Статус код 200  
+*На вкладке Tests добавить из сниппетов Status code: Code is 200*  
+```  
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});  
+```  
+*На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174058603-adc2341d-6bd0-4f92-bc58-1b68232844d4.png)  
+
+6. Спарсить response body в json.  
+ ```  
+ let responseData = pm.response.json();
+console.log(responseData);  
+ ```  
+7. Спарсить request.  
+```  
+let requestData = request.data;
+console.log(requestData);  
+```  
+8. Проверить, что json response имеет параметр start_qa_salary  
+```  
+pm.test("start_qa_salary here", function () {
+    pm.expect(responseData).to.haveOwnProperty('start_qa_salary');
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174137006-69540e79-a1a0-44b5-a8f8-450302402c30.png)  
+
+9. Проверить, что json response имеет параметр qa_salary_after_6_months  
+```  
+pm.test("qa_salary_after_6_months here", function () {
+    pm.expect(responseData).to.haveOwnProperty('qa_salary_after_6_months');
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174137330-5333cae1-b2bc-4c39-8ca8-7cf5e89ae648.png)  
+
+10. Проверить, что json response имеет параметр qa_salary_after_12_months  
+```  
+pm.test("qa_salary_after_12_months here", function () {
+    pm.expect(responseData).to.haveOwnProperty('qa_salary_after_12_months');
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174137675-22c7001d-d630-4ac8-98e0-12e20da74ea1.png)  
+
+11. Проверить, что json response имеет параметр qa_salary_after_1.5_year  
+```  
+pm.test("qa_salary_after_1.5_year here", function () {
+    pm.expect(responseData).to.haveOwnProperty('qa_salary_after_1.5_year');
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174137951-91d4bebc-a8d4-4023-81eb-f1dc44c16b03.png)  
+
+12. Проверить, что json response имеет параметр qa_salary_after_3.5_years  
+```  
+pm.test("qa_salary_after_3.5_years here", function () {
+    pm.expect(responseData).to.haveOwnProperty('qa_salary_after_3.5_years');
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174138179-b31446bc-203e-483d-b891-556dfe61ca28.png)  
+
+13. Проверить, что json response имеет параметр person  
+ 
+```  
+pm.test("person here", function () {
+    pm.expect(responseData).to.haveOwnProperty('person');
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174138550-fd2c37a9-73da-4615-951b-c3adb3743376.png)  
+
+14. Проверить, что параметр start_qa_salary равен salary из request (salary забрать из request)  
+```  
+pm.test("start_qa_salary is correct", function () {
+    pm.expect(responseData.start_qa_salary).to.eql(Number(requestData.salary));
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174139538-8c69cafd-b657-4d74-8f91-ffa7c29084ca.png)  
+
+15. Проверить, что параметр qa_salary_after_6_months равен salary*2 из request (salary забрать из request)  
+```   
+pm.test("qa_salary_after_6_months is correct", function () {
+    pm.expect(+responseData.qa_salary_after_6_months).to.eql(requestData.salary*2);
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174139613-3428fcff-f12d-46a5-a0d4-986c020cc752.png)  
+
+16. Проверить, что параметр qa_salary_after_12_months равен salary*2.7 из request (salary забрать из request)  
+```  
+pm.test("qa_salary_after_12_months is correct", function () {
+    pm.expect(+responseData.qa_salary_after_12_months).to.eql(requestData.salary*2.7);
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174139963-bbe64f75-00de-4d9d-9c6b-9588fd421115.png)  

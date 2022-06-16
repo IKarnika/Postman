@@ -712,6 +712,8 @@ pm.environment.set('Age', responseData.age);
 ```  
 pm.environment.set('Salary', responseData.salary);  
 ```
+![](https://user-images.githubusercontent.com/103427482/174132754-6a22ea57-43b4-438e-941f-d5abfa018d58.png)  
+
 21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary  
 ```  
 for (let i of responseData.salary) {  

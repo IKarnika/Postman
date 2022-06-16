@@ -330,6 +330,7 @@ pm.test("Body is correct", function () {
 Метод - POST  
 Вкладка Body, form-data  
 Ввести ключи и значения:*  
+
 Key| Value  
 :--: | :--:  
 name | Vishenka  

@@ -296,12 +296,31 @@ response:
 Сохранить (Save) и отправить (Send)* 
 
 Статус код 200  
+*Переключиться на вкладку Tests, в сниппетах(Snippets) выбрать Status code: Code is 200*  
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});  
+```  
 
-![](https://user-images.githubusercontent.com/103427482/173824538-ba512760-dc72-4a83-add3-441943a130a0.png)  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![200](https://user-images.githubusercontent.com/103427482/174010311-3ab8fb14-f18d-4ff4-ac28-032f3d16df59.png)  
 
 Проверить, что в body приходит правильный string  
 
 ![](https://user-images.githubusercontent.com/103427482/173826225-8c0e00f1-c1b3-4508-a767-7110655df5a3.png)  
+
+*В сниппетах(Snippets) выбрать Response body: is equal to a string  
+Вписать значение строки*  
+```  
+pm.test("Body is correct", function () {
+    pm.response.to.have.body("This is the first responce from server!");
+});  
+```
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![Screenshot_5](https://user-images.githubusercontent.com/103427482/174012202-c601c29d-7607-49a7-b457-9f6b20e25671.png)  
 
 <a name="user_info_3"></a>
 ##### EP http://162.55.220.72:5005/user_info_3  

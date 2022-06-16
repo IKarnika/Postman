@@ -14,7 +14,7 @@
 #### [EP http://162.55.220.72:5005/first  ](#first)  
 #### [EP http://162.55.220.72:5005/user_info_3](#user_info_3)  
 #### [EP http://162.55.220.72:5005/object_info_3](#object_info_3)  
-#### [EP http://162.55.220.72:5005/object_info_4](#onject_info_4)
+#### [EP http://162.55.220.72:5005/object_info_4](#object_info_4)
 
 <a name="HW"></a>
 #### HW_1 Создать запросы в Postman

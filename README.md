@@ -433,7 +433,7 @@ pm.test("age request", function () {
 Внести необходимые изменения*  
 ```  
 pm.test("salary request", function () {
-    pm.expect(responseData.salary).to.eql(2000);
+     pm.expect(responseData.salary).to.eql(Number(requestData.salary));
 });  
 ```  
 *Сохранить (Save) и отправить (Send)  
@@ -829,3 +829,51 @@ pm.test("qa_salary_after_12_months is correct", function () {
 });  
 ```  
 ![](https://user-images.githubusercontent.com/103427482/174139963-bbe64f75-00de-4d9d-9c6b-9588fd421115.png)  
+
+17. Проверить, что параметр qa_salary_after_1.5_year равен salary*3.3 из request (salary забрать из request)  
+```  
+pm.test("qa_salary_after_1.5_year is correct", function () {
+    pm.expect(responseData['qa_salary_after_1.5_year']).to.eql(requestData.salary*3.3);
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174146235-eacb1131-68df-4e97-b8ea-97fe0fcb99e6.png)  
+
+18. Проверить, что параметр qa_salary_after_3.5_years равен salary*3.8 из request (salary забрать из request)  
+```  
+pm.test("qa_salary_after_3.5_years is correct", function () {
+    pm.expect(responseData['qa_salary_after_3.5_years']).to.eql(requestData.salary*3.8);
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174146539-42ccf061-8c61-418f-9c37-dc8c4411c3f0.png)  
+
+19. Проверить, что в параметре person, 1-й элемент из u_name равен salary из request (salary забрать из request.)  
+```  
+pm.test("u_name is correct", function () {
+    pm.expect(responseData.person.u_name[1]).to.eql(Number(requestData.salary));
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174147262-d2d66262-a31d-429d-93ec-e0339afbb9d9.png)  
+
+20. Проверить, что что параметр u_age равен age из request (age забрать из request)  
+```  
+pm.test("u_age is correct", function () {
+    pm.expect(responseData.person.u_age).to.eql(Number(requestData.age));
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174147589-baf13904-33b3-405b-b0be-ed445b307254.png)  
+
+21. Проверить, что параметр u_salary_5_years равен salary*4.2 из request (salary забрать из request)  
+```  
+pm.test("u_salary_5_years is correct", function () {
+    pm.expect(responseData.person['u_salary_5_years']).to.eql(requestData.salary*4.2);
+});  
+```  
+![](https://user-images.githubusercontent.com/103427482/174147916-2099bed6-471d-429c-b62c-cee0d5abfd74.png)  
+
+22. Написать цикл который выведет в консоль по порядку элементы списка из параметра person.  
+```  
+for (let i in responseData.person) {  
+console.log('person elements:',i);  
+	}
+```  
+![](https://user-images.githubusercontent.com/103427482/174148179-986d087a-6873-4510-aa5d-1c9070ca322c.png)

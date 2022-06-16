@@ -289,13 +289,13 @@ response:
 
 <a name="first"></a>
 ##### EP http://162.55.220.72:5005/first  
-Отправить запрос  
+1. Отправить запрос  
 *Создать новую колеекцию HW_2.  
 Добавить запрос(add request) Req_1  
 Вести url http://162.55.220.72:5005/first  
 Сохранить (Save) и отправить (Send)* 
 
-Статус код 200  
+2. Статус код 200  
 *Переключиться на вкладку Tests, в сниппетах(Snippets) выбрать Status code: Code is 200*  
 ```
 pm.test("Status code is 200", function () {
@@ -305,9 +305,9 @@ pm.test("Status code is 200", function () {
 
 *Сохранить (Save) и отправить (Send)  
 На вкладке Test Results посмотреть результат*  
-![200](https://user-images.githubusercontent.com/103427482/174010311-3ab8fb14-f18d-4ff4-ac28-032f3d16df59.png)  
+![](https://user-images.githubusercontent.com/103427482/174010311-3ab8fb14-f18d-4ff4-ac28-032f3d16df59.png)  
 
-Проверить, что в body приходит правильный string  
+3. Проверить, что в body приходит правильный string  
 
 ![](https://user-images.githubusercontent.com/103427482/173826225-8c0e00f1-c1b3-4508-a767-7110655df5a3.png)  
 
@@ -320,14 +320,78 @@ pm.test("Body is correct", function () {
 ```
 *Сохранить (Save) и отправить (Send)  
 На вкладке Test Results посмотреть результат*  
-![Screenshot_5](https://user-images.githubusercontent.com/103427482/174012202-c601c29d-7607-49a7-b457-9f6b20e25671.png)  
+![](https://user-images.githubusercontent.com/103427482/174012202-c601c29d-7607-49a7-b457-9f6b20e25671.png)  
 
 <a name="user_info_3"></a>
 ##### EP http://162.55.220.72:5005/user_info_3  
-Отправить запрос  
+1. Отправить запрос  
 *Дублировать предыдущий запрос, переименовать в Req_2  
 Ввести url http://162.55.220.72:5005/user_info_3  
-Сохранить (Save) и отправить (Send)*  
+Метод - POST  
+Вкладка Body, form-data  
+Ввести ключи и значения:*  
+Key| Value  
+:--: | :--:  
+name | Vishenka  
+age | 18  
+salary | 2000  
 
-Статус код 200
+*Сохранить (Save) и отправить (Send)*  
 
+2. Статус код 200  
+*Переключиться на вкладку Tests, в сниппетах(Snippets) выбрать Status code: Code is 200*  
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});  
+```  
+
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174010311-3ab8fb14-f18d-4ff4-ac28-032f3d16df59.png)  
+
+3. Спарсить response body в json  
+*На вкладке Tests прописать*  
+```  
+let responseData = pm.response.json();
+console.log(responseData);  
+```  
+4. Проверить, что name в ответе равно name s request (name вбить руками)  
+*В сниппетах выбрать Response body: JSON value check  
+Внести необходимые изменения*
+```   
+pm.test("name", function () {
+    let jsonData = pm.response.json();
+    pm.expect(jsonData.name).to.eql("Vishenka");
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+
+![](https://user-images.githubusercontent.com/103427482/174016697-403fec2a-e10f-4c38-877c-1d3ed71332c1.png)  
+
+5. Проверить, что age в ответе равно age s request (age вбить руками)  
+*Дублировать предыдущий скрипт  
+Внести необходимые изменения*  
+```  
+pm.test("age s request", function () {
+    let jsonData = pm.response.json();
+    pm.expect(jsonData.age).to.eql("18");
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174017713-434a462d-5619-472c-818c-16325b587446.png)  
+
+6.Проверить, что salary в ответе равно salary s request (salary вбить руками)  
+*Дублировать предыдущий скрипт  
+Внести необходимые изменения*  
+```  
+pm.test("salary s request", function () {
+    let jsonData = pm.response.json();
+    pm.expect(jsonData.salary).to.eql(2000);
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174018120-a13cc939-4ba2-4915-9112-e1ce75adc83f.png)  

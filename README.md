@@ -693,6 +693,29 @@ pm.test("salary*3 is correct", function () {
 ![](https://user-images.githubusercontent.com/103427482/174124599-e0add45a-bb76-43a4-8903-94c784f1503b.png)  
 
 15.Создать в окружении переменную name  
+16.Создать в окружении переменную age  
+17. Создать в окружении переменную salary  
 *На панели нажать Environment, Create new environment, присвоить окружению имя(New for HW_2)  
 В атрибут Variable внести строку name, присвоив значение(Current value) "Chipy"*  
+![](https://user-images.githubusercontent.com/103427482/174129810-a6e809af-aa33-46f8-9bd4-2594ef05eba0.png)  
 
+18. Передать в окружение переменную name  
+*Выбрать окружение New for HW_2, зайти в последний реквест(Req_4), во вкладке Tests прописать:*  
+```  
+pm.environment.set('Name', responseData.name);  
+```  
+19. Передать в окружение переменную age  
+```  
+pm.environment.set('Age', responseData.age);  
+```
+20. Передать в окружение переменную salary  
+```  
+pm.environment.set('Salary', responseData.salary);  
+```
+21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary  
+```  
+for (let i of responseData.salary) {  
+console.log('salary elements',i);  
+	}  
+ ```  
+![](https://user-images.githubusercontent.com/103427482/174132442-9a0d913e-a947-412d-9b93-0c4928896b8f.png)  

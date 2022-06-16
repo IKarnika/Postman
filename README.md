@@ -578,3 +578,76 @@ pm.test("Age is 4", function () {
 <a name="object_info_4"></a>
 ##### EP http://162.55.220.72:5005/object_info_4  
 
+1. Отправить запрос  
+*Создать новый запрос, присвоить имя Req_4  
+Метод GET  
+Ввести ключи и значения*  
+
+Key| Value  
+:--: | :--:  
+name | Tomat  
+age | 33  
+salary | 1000  
+
+*Сохранить (Save) и отправить (Send)*  
+
+2. Статус код 200  
+*Переключиться на вкладку Tests, в сниппетах(Snippets) выбрать Status code: Code is 200*  
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174058603-adc2341d-6bd0-4f92-bc58-1b68232844d4.png)  
+
+3.  Спарсить response body в json  
+*На вкладке Tests прописать*  
+```  
+let responseData = pm.response.json();
+console.log(responseData);  
+```  
+![](https://user-images.githubusercontent.com/103427482/174059040-6f32d6ec-cdd4-4337-b72a-8eba88fa6cbb.png)  
+
+4. Спарсить request  
+*На вкладке Tests прописать*  
+```  
+let requestData = pm.request.url.query.toObject()  
+console.log('Request Data:', requestData);  
+```  
+![](https://user-images.githubusercontent.com/103427482/174059127-3e883e90-71b6-4e20-a89a-fe69b28fb0e2.png)  
+
+5. Проверить, что name в ответе равно name s request (name забрать из request)  
+```  
+pm.test("name is correct", function () {
+    pm.expect(responseData.name).to.eql("Tomat");
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174046811-f81e6c08-35e9-4c92-8c58-89b17b2ffdad.png)  
+
+6. Проверить, что age в ответе равно age s request (age забрать из request)  
+```  
+pm.test("age is correct", function () {
+    pm.expect(responseData.age).to.eql("33");  
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174051556-2d684da8-d734-4c7d-a34a-55780c0e3c30.png)   
+
+7. Вывести в консоль параметр salary из request  
+```  
+console.log('Request salary', requestData.salary);  
+```  
+![](https://user-images.githubusercontent.com/103427482/174060138-f641fe0c-d723-4a90-ac93-cb74919481aa.png)  
+
+8. Вывести в консоль параметр salary из reaponse  
+```  
+console.log('Response salary', responseData.salary);  
+```  
+![](https://user-images.githubusercontent.com/103427482/174060148-1f8aa691-af38-4ade-8436-ef8cb0712f30.png)  
+
+9. Вывести в консоль 0-й элемент параметра salary из response

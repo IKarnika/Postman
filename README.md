@@ -361,14 +361,13 @@ console.log(responseData);
 *В сниппетах выбрать Response body: JSON value check  
 Внести необходимые изменения*
 ```   
-pm.test("name", function () {
+pm.test("name s request", function () {
     let jsonData = pm.response.json();
     pm.expect(jsonData.name).to.eql("Vishenka");
 });  
 ```  
 *Сохранить (Save) и отправить (Send)  
 На вкладке Test Results посмотреть результат*  
-
 ![](https://user-images.githubusercontent.com/103427482/174016697-403fec2a-e10f-4c38-877c-1d3ed71332c1.png)  
 
 5. Проверить, что age в ответе равно age s request (age вбить руками)  
@@ -396,3 +395,51 @@ pm.test("salary s request", function () {
 *Сохранить (Save) и отправить (Send)  
 На вкладке Test Results посмотреть результат*  
 ![](https://user-images.githubusercontent.com/103427482/174018120-a13cc939-4ba2-4915-9112-e1ce75adc83f.png)  
+
+7. Спарсить request
+*На вкладке Tests прописать*  
+```  
+let requestData = request.data;
+console.log(requestData);  
+```  
+8. Проверить, что name в ответе равно name s request (name забрать из request)  
+*В сниппетах выбрать Response body: JSON value check  
+Внести необходимые изменения*  
+```  
+pm.test("name request", function () {
+    pm.expect(responseData.name).to.eql("Vishenka");
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174021208-6feb7fb5-a2fb-47ee-b3bb-8af0f601d35d.png)  
+
+9. Проверить, что age в ответе равно age s request (age забрать из request)  
+*Дублировать предыдущий скрипт  
+Внести необходимые изменения*  
+```  
+pm.test("age request", function () {
+    pm.expect(responseData.age).to.eql("18");
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174021968-6548568e-8e26-47a8-b67f-b254efb3ccc5.png)  
+
+10. Проверить, что salary в ответе равно salary s request (salary забрать из request)  
+*Дублировать предыдущий скрипт  
+Внести необходимые изменения*  
+```  
+pm.test("salary request", function () {
+    pm.expect(responseData.salary).to.eql(2000);
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174022262-d0ec1435-7901-45d3-a93f-77904a2ee731.png)  
+
+11. Вывести в консоль параметр family из response  
+```  
+console.log(responseData.family);  
+```  
+12. Проверить что u_salary_1_5_year в ответе равно salary*4 (salary забрать из request)  

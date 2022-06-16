@@ -13,6 +13,7 @@
 ### [HW_2](#HW2)  
 #### [EP http://162.55.220.72:5005/first  ](#first)  
 #### [EP http://162.55.220.72:5005/user_info_3](#user_info_3)  
+#### [EP http://162.55.220.72:5005/object_info_3](#object_info_3)
 
 <a name="HW"></a>
 #### HW_1 Создать запросы в Postman
@@ -454,3 +455,76 @@ pm.test("salary*4 check", function () {
 *Сохранить (Save) и отправить (Send)  
 На вкладке Test Results посмотреть результат*  
 ![](https://user-images.githubusercontent.com/103427482/174026929-5b9ee0e6-d9ba-4bf0-8a3b-f017675b66f5.png)  
+
+<a name="object_info_3"></a>
+##### EP http://162.55.220.72:5005/object_info_3  
+
+1. Отправить запрос  
+*Создать новый запрос, присвоить имя Req_3  
+Метод GET  
+Ввести ключи и значения*  
+
+Key| Value  
+:--: | :--:  
+name | Yabloko  
+age | 24  
+salary | 3000  
+
+*Сохранить (Save) и отправить (Send)*  
+2. Статус код 200  
+*Переключиться на вкладку Tests, в сниппетах(Snippets) выбрать Status code: Code is 200*  
+```
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174029804-66ba8902-02cb-4452-8703-ac39afbeab9a.png)  
+
+3. Спарсить response body в json  
+*На вкладке Tests прописать*  
+```  
+let responseData = pm.response.json();
+console.log(responseData);  
+```  
+![](https://user-images.githubusercontent.com/103427482/174051900-97a95906-4de0-423e-913c-1a24dee0bced.png)  
+
+4. Спарсить request  
+*На вкладке Tests прописать*  
+```  
+let requestData = pm.request.url.query.toObject()  
+console.log('Request Data:', requestData);  
+```  
+![](https://user-images.githubusercontent.com/103427482/174051748-e4145709-d052-4619-995e-6deeeb17219f.png)  
+
+5. Проверить, что name в ответе равно name s request (name забрать из request)  
+```  
+pm.test("name is correct", function () {
+    pm.expect(responseData.name).to.eql("Yabloko");
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174046811-f81e6c08-35e9-4c92-8c58-89b17b2ffdad.png)  
+
+6. Проверить, что age в ответе равно age s request (age забрать из request)  
+```  
+pm.test("age is correct", function () {
+    pm.expect(responseData.age).to.eql("24");  
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174051556-2d684da8-d734-4c7d-a34a-55780c0e3c30.png)   
+
+7. Проверить, что salary в ответе равно salary s request (salary забрать из request)  
+```  
+pm.test("salary is correct", function () {
+    pm.expect(responseData.salary).to.eql(3000);
+});  
+```  
+*Сохранить (Save) и отправить (Send)  
+На вкладке Test Results посмотреть результат*  
+![](https://user-images.githubusercontent.com/103427482/174053888-240d4dcf-4bae-4024-b9fa-898b318d36f7.png)  
+
